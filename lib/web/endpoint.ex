@@ -1,4 +1,4 @@
-defmodule PetalWeb.Endpoint do
+defmodule Web.Endpoint do
   use Phoenix.Endpoint, otp_app: :petal
 
   # The session will be stored in the cookie and signed,
@@ -10,7 +10,7 @@ defmodule PetalWeb.Endpoint do
     signing_salt: "bKbH/DUs"
   ]
 
-  socket "/socket", PetalWeb.UserSocket,
+  socket "/socket", Web.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -50,5 +50,5 @@ defmodule PetalWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug PetalWeb.Router
+  plug Web.Router
 end

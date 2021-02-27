@@ -10,11 +10,11 @@ defmodule Petal.Application do
       # Start the Ecto repository
       Petal.Repo,
       # Start the Telemetry supervisor
-      PetalWeb.Telemetry,
+      Web.Telemetry,
       # Start the PubSub system
       {Phoenix.PubSub, name: Petal.PubSub},
       # Start the Endpoint (http/https)
-      PetalWeb.Endpoint
+      Web.Endpoint
       # Start a worker by calling: Petal.Worker.start_link(arg)
       # {Petal.Worker, arg}
     ]
@@ -28,7 +28,7 @@ defmodule Petal.Application do
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    PetalWeb.Endpoint.config_change(changed, removed)
+    Web.Endpoint.config_change(changed, removed)
     :ok
   end
 end

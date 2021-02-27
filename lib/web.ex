@@ -1,12 +1,12 @@
-defmodule PetalWeb do
+defmodule Web do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use PetalWeb, :controller
-      use PetalWeb, :view
+      use Web, :controller
+      use Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule PetalWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: PetalWeb
+      use Phoenix.Controller, namespace: Web
 
       import Plug.Conn
-      import PetalWeb.Gettext
-      alias PetalWeb.Router.Helpers, as: Routes
+      import Web.Gettext
+      alias Web.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/petal_web/templates",
-        namespace: PetalWeb
+        root: "lib/web/templates",
+        namespace: Web
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -45,7 +45,7 @@ defmodule PetalWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {PetalWeb.LayoutView, "live.html"}
+        layout: {Web.LayoutView, "live.html"}
 
       unquote(view_helpers())
     end
@@ -72,7 +72,7 @@ defmodule PetalWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import PetalWeb.Gettext
+      import Web.Gettext
     end
   end
 
@@ -87,9 +87,9 @@ defmodule PetalWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import PetalWeb.ErrorHelpers
-      import PetalWeb.Gettext
-      alias PetalWeb.Router.Helpers, as: Routes
+      import Web.ErrorHelpers
+      import Web.Gettext
+      alias Web.Router.Helpers, as: Routes
     end
   end
 

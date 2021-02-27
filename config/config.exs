@@ -11,10 +11,10 @@ config :petal,
   ecto_repos: [Petal.Repo]
 
 # Configures the endpoint
-config :petal, PetalWeb.Endpoint,
+config :petal, Web.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "jEHlsCe6fZtIdOj27Wq3MYAXnFr7RsvcFvbDyDhDaBSekB0Dlr8ulNMQAoePpAV8",
-  render_errors: [view: PetalWeb.ErrorView, accepts: ~w(html json), layout: false],
+  render_errors: [view: Web.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Petal.PubSub,
   live_view: [signing_salt: "RMzKaxL2"]
 
